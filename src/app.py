@@ -2,7 +2,6 @@ import uvicorn
 import sqlalchemy
 from src.routes import routes
 from src.db import database, metadata
-from src.middlewares import middlewares
 from starlette.applications import Starlette
 
 
@@ -12,7 +11,6 @@ metadata.create_all(engine)
 app = Starlette(
     debug=True,
     routes=routes,
-    middleware=middlewares,
     on_startup=[database.connect],
     on_shutdown=[database.disconnect]
 )

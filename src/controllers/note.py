@@ -53,9 +53,3 @@ class NoteByIdController(HTTPEndpoint):
         }
 
         return JSONResponse(content)
-
-    async def put(self, request: Request):
-        pass
-
-    async def delete(self, request: Request):
-        pass
